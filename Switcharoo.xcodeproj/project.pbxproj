@@ -12,6 +12,10 @@
 		AD9C6091237B2FBB000F5F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C6090237B2FBB000F5F7F /* Assets.xcassets */; };
 		AD9C6094237B2FBB000F5F7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C6093237B2FBB000F5F7F /* Preview Assets.xcassets */; };
 		AD9C6097237B2FBB000F5F7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9C6095237B2FBB000F5F7F /* Main.storyboard */; };
+		AD9C60A4237B3657000F5F7F /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = AD9C60A2237B3657000F5F7F /* start.txt */; };
+		AD9C60A5237B3657000F5F7F /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = AD9C60A3237B3657000F5F7F /* words.txt */; };
+		AD9C60A7237B3779000F5F7F /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60A6237B3779000F5F7F /* Letter.swift */; };
+		AD9C60A9237B38B3000F5F7F /* Bundle-WordLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60A8237B38B3000F5F7F /* Bundle-WordLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		AD9C6096237B2FBB000F5F7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD9C6098237B2FBB000F5F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9C6099237B2FBB000F5F7F /* Switcharoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Switcharoo.entitlements; sourceTree = "<group>"; };
+		AD9C60A2237B3657000F5F7F /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		AD9C60A3237B3657000F5F7F /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		AD9C60A6237B3779000F5F7F /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		AD9C60A8237B38B3000F5F7F /* Bundle-WordLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-WordLoading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 		AD9C6080237B2FB9000F5F7F = {
 			isa = PBXGroup;
 			children = (
+				AD9C60A8237B38B3000F5F7F /* Bundle-WordLoading.swift */,
 				AD9C608B237B2FB9000F5F7F /* Switcharoo */,
 				AD9C608A237B2FB9000F5F7F /* Products */,
 			);
@@ -56,11 +65,14 @@
 			isa = PBXGroup;
 			children = (
 				AD9C608C237B2FB9000F5F7F /* AppDelegate.swift */,
+				AD9C60A6237B3779000F5F7F /* Letter.swift */,
 				AD9C608E237B2FB9000F5F7F /* ContentView.swift */,
 				AD9C6090237B2FBB000F5F7F /* Assets.xcassets */,
 				AD9C6095237B2FBB000F5F7F /* Main.storyboard */,
 				AD9C6098237B2FBB000F5F7F /* Info.plist */,
 				AD9C6099237B2FBB000F5F7F /* Switcharoo.entitlements */,
+				AD9C60A2237B3657000F5F7F /* start.txt */,
+				AD9C60A3237B3657000F5F7F /* words.txt */,
 				AD9C6092237B2FBB000F5F7F /* Preview Content */,
 			);
 			path = Switcharoo;
@@ -133,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD9C6097237B2FBB000F5F7F /* Main.storyboard in Resources */,
+				AD9C60A4237B3657000F5F7F /* start.txt in Resources */,
 				AD9C6094237B2FBB000F5F7F /* Preview Assets.xcassets in Resources */,
+				AD9C60A5237B3657000F5F7F /* words.txt in Resources */,
 				AD9C6091237B2FBB000F5F7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9C60A9237B38B3000F5F7F /* Bundle-WordLoading.swift in Sources */,
+				AD9C60A7237B3779000F5F7F /* Letter.swift in Sources */,
 				AD9C608F237B2FB9000F5F7F /* ContentView.swift in Sources */,
 				AD9C608D237B2FB9000F5F7F /* AppDelegate.swift in Sources */,
 			);
