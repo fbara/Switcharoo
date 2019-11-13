@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var activeLetters = [String](repeating: "Blank", count: 4)
-    @State var tray = [String](repeating: "Blank", count: 10)
+    @State private var activeLetters = [String](repeating: "Blank", count: 4)
+    @State private var tray = [String](repeating: "Blank", count: 10)
+    @State private var buttonFrames = [CGRect](repeating: .zero, count: 4)
     
     let allowedWords = Bundle.main.words(from: "words.txt")
     let startWords = Bundle.main.words(from: "start.txt")
@@ -25,7 +26,15 @@ struct ContentView: View {
             HStack {
                 ForEach(0..<4) { number in
                     Letter(text: self.activeLetters[number])
-                    .allowsHitTesting(false)
+                        .allowsHitTesting(false)
+                        .overlay( GeometryReader { geo in
+                            Color.clear
+                                .onAppear {
+                                    self.buttonFrames[number] = geo.frame(in: .global)
+                                }
+                            }
+                            
+                    )
                 }
             }
             
@@ -33,7 +42,7 @@ struct ContentView: View {
             
             HStack {
                 ForEach(0..<10) { number in
-                    Letter(text: self.tray[number])
+                    Letter(text: self.tray[number], onChanged: self.letterMoved)
                 }
             }
         }
@@ -50,6 +59,26 @@ struct ContentView: View {
     
     func randomLetter() -> String {
         String("AAAAABBBCCCCCDDDDEEEEEEEFGGGHIIIJKLLLLMMMMNNNNOOOOOPPPQRRRSSSSTTTTUVWWXYZ".randomElement() ?? "E")
+    }
+    
+    func letterMoved(location: CGPoint, letter: String) -> DragState {
+        if let match = buttonFrames.firstIndex(where: {
+            $0.contains(location) }) {
+            if activeLetters[match] == letter { return .bad }
+            
+            var testLetters = activeLetters
+            testLetters[match] = letter
+            
+            let testWord = String(testLetters.joined())
+            
+            if allowedWords.contains(testWord) {
+                return .good
+            } else {
+                return .bad
+            }
+        } else {
+            return .unknown
+        }
     }
 }
 
