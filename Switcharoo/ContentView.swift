@@ -9,6 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var activeLetters = [String](repeating: "Blank", count: 4)
+    @State var tray = [String](repeating: "Blank", count: 10)
+    
+    let allowedWords = Bundle.main.words(from: "words.txt")
+    let startWords = Bundle.main.words(from: "start.txt")
+    
     var body: some View {
         VStack(spacing: 20) {
             Image("Switcharoo")
@@ -18,7 +24,8 @@ struct ContentView: View {
             
             HStack {
                 ForEach(0..<4) { number in
-                    Letter(text: "A")
+                    Letter(text: self.activeLetters[number])
+                    .allowsHitTesting(false)
                 }
             }
             
@@ -26,12 +33,23 @@ struct ContentView: View {
             
             HStack {
                 ForEach(0..<10) { number in
-                    Letter(text: "A")
+                    Letter(text: self.tray[number])
                 }
             }
         }
         .frame(width: 1024, height: 768)
     .background(Image("Background"))
+    .onAppear(perform: startGame)
+    }
+    
+    func startGame() {
+        let newWord = startWords.randomElement() ?? "CAPE"
+        activeLetters = newWord.map(String.init)
+        tray = (1...10).map { _ in self.randomLetter() }
+    }
+    
+    func randomLetter() -> String {
+        String("AAAAABBBCCCCCDDDDEEEEEEEFGGGHIIIJKLLLLMMMMNNNNOOOOOPPPQRRRSSSSTTTTUVWWXYZ".randomElement() ?? "E")
     }
 }
 

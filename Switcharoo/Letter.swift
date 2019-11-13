@@ -9,11 +9,23 @@
 import SwiftUI
 
 struct Letter: View {
+    @State var dragAmount = CGSize.zero
     var text: String
     
     var body: some View {
         Image(text)
-        .frame(width: 90, height: 130)
+            .frame(width: 90, height: 130)
+            .offset(dragAmount)
+            .zIndex(dragAmount == .zero ? 0 : 1)
+            .gesture(
+                DragGesture(coordinateSpace: .global)
+                    .onChanged {
+                        self.dragAmount = CGSize(width: $0.translation.width, height: -$0.translation.height)
+                }
+                .onEnded {_ in
+                    self.dragAmount = .zero
+                }
+        )
     }
 }
 
