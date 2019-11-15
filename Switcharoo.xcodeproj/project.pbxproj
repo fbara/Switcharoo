@@ -16,6 +16,9 @@
 		AD9C60A5237B3657000F5F7F /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = AD9C60A3237B3657000F5F7F /* words.txt */; };
 		AD9C60A7237B3779000F5F7F /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60A6237B3779000F5F7F /* Letter.swift */; };
 		AD9C60A9237B38B3000F5F7F /* Bundle-WordLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60A8237B38B3000F5F7F /* Bundle-WordLoading.swift */; };
+		AD9C60AB237E5642000F5F7F /* GameNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60AA237E5642000F5F7F /* GameNumber.swift */; };
+		AD9C60AF237E59E2000F5F7F /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60AE237E59E2000F5F7F /* ResetButton.swift */; };
+		AD9C60B1237E5EE1000F5F7F /* ShuffleTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C60B0237E5EE1000F5F7F /* ShuffleTray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		AD9C60A3237B3657000F5F7F /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		AD9C60A6237B3779000F5F7F /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		AD9C60A8237B38B3000F5F7F /* Bundle-WordLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-WordLoading.swift"; sourceTree = "<group>"; };
+		AD9C60AA237E5642000F5F7F /* GameNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNumber.swift; sourceTree = "<group>"; };
+		AD9C60AE237E59E2000F5F7F /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
+		AD9C60B0237E5EE1000F5F7F /* ShuffleTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleTray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,12 @@
 		AD9C608B237B2FB9000F5F7F /* Switcharoo */ = {
 			isa = PBXGroup;
 			children = (
+				AD9C60AA237E5642000F5F7F /* GameNumber.swift */,
 				AD9C608C237B2FB9000F5F7F /* AppDelegate.swift */,
+				AD9C60AE237E59E2000F5F7F /* ResetButton.swift */,
 				AD9C60A6237B3779000F5F7F /* Letter.swift */,
 				AD9C608E237B2FB9000F5F7F /* ContentView.swift */,
+				AD9C60B0237E5EE1000F5F7F /* ShuffleTray.swift */,
 				AD9C6090237B2FBB000F5F7F /* Assets.xcassets */,
 				AD9C6095237B2FBB000F5F7F /* Main.storyboard */,
 				AD9C6098237B2FBB000F5F7F /* Info.plist */,
@@ -160,8 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD9C60A9237B38B3000F5F7F /* Bundle-WordLoading.swift in Sources */,
+				AD9C60B1237E5EE1000F5F7F /* ShuffleTray.swift in Sources */,
+				AD9C60AF237E59E2000F5F7F /* ResetButton.swift in Sources */,
 				AD9C60A7237B3779000F5F7F /* Letter.swift in Sources */,
 				AD9C608F237B2FB9000F5F7F /* ContentView.swift in Sources */,
+				AD9C60AB237E5642000F5F7F /* GameNumber.swift in Sources */,
 				AD9C608D237B2FB9000F5F7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
