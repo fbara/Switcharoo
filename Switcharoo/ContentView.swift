@@ -25,7 +25,7 @@ struct ContentView: View {
             
             HStack {
                 ForEach(0..<4) { number in
-                    Letter(text: self.activeLetters[number])
+                    Letter(text: self.activeLetters[number], index: number)
                         .allowsHitTesting(false)
                         .overlay( GeometryReader { geo in
                             Color.clear
@@ -42,7 +42,7 @@ struct ContentView: View {
             
             HStack {
                 ForEach(0..<10) { number in
-                    Letter(text: self.tray[number], onChanged: self.letterMoved)
+                    Letter(text: self.tray[number], index: number, onChanged: self.letterMoved, onEnded: self.letterDropped)
                 }
             }
         }
@@ -78,6 +78,16 @@ struct ContentView: View {
             }
         } else {
             return .unknown
+        }
+    }
+    
+    func letterDropped(location: CGPoint, trayIndex: Int, letter: String) {
+        if let match = buttonFrames.firstIndex(where: { $0.contains(location)
+        }) {
+            activeLetters[match] = letter
+            
+            tray.remove(at: trayIndex)
+            tray.append(randomLetter())
         }
     }
 }
